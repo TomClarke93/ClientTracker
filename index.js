@@ -11,7 +11,9 @@ db.once('open', function() {
   console.log("Connected to MongoDB")
 });
 
-
+//Route Handlers
+const companies = require('./routes/companies')
+app.use('/companies', companies);
 
 
 
