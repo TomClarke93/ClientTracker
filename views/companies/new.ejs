@@ -1,0 +1,29 @@
+<%- layout('layouts/boilerplate') -%>
+    <h1>New Company</h1>
+    <a href="/companies">Back to Companies</a>
+    <form action="/companies" method="post">
+        <div>
+            <label for="name">Company Name</label>
+            <input type="text" name="company[name]" id="name">
+        </div>
+        <div>
+            <label for="clientCode">Client Code</label>
+            <input type="text" name="company[clientCode]" id="clientCode">
+        </div>
+        <div>
+            <label for="type">Type</label>
+            <select name="company[type]" id="type">
+                <option value="lead">Lead</option>
+                <option value="prospect">Prospect</option>
+                <option value="client">Client</option>
+                <option value="inactive">Inactive Client</option>
+            </select>
+        </div>
+        <div>
+            <label for="summary">Company Summary</label>
+            <textarea name="company[summary]" id="summary" cols="50" rows="5"></textarea>
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>

@@ -6,11 +6,11 @@ const Company = require('../models/company');
 
 router.get('/', async (req, res) => {
     const companies = await Company.find({});
-    res.send(companies);
+    res.render('companies/index', {companies});
 })
 
 router.get('/new', (req, res) => {
-    res.send('Add new Company');
+    res.render('companies/new')
 })
 
 router.post('/', async (req, res) => {
