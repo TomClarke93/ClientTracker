@@ -1,0 +1,12 @@
+<%- layout('layouts/boilerplate') -%>
+    <h1>All Companies</h1>
+    <a href="/companies/new">New Company</a>
+    <ul>
+        <% for(let company of companies) { %>
+            <a href="/companies/<%= company._id %>">
+                <li>
+                    <%= company.name %>
+                </li>
+            </a>
+            <% } %>
+    </ul>

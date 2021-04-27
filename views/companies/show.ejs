@@ -1,0 +1,25 @@
+<%- layout('layouts/boilerplate') -%>
+    <h1>
+        <%= company.name %>
+    </h1>
+    <div>
+        <a href=<%=`/companies/${company._id}/edit` %>>Edit Company</a>
+    </div>
+    <div>
+        <form action="/companies/<%=company._id%>?_method=DELETE" method="POST">
+            <button>Delete Company</button>
+        </form>
+    </div>
+    <h2>
+        <%= company.clientCode%>
+    </h2>
+    <div>
+        <p>Type: <%= company.type %>
+        </p>
+        <p>
+            <%= company.summary%>
+        </p>
+    </div>
+    <div>
+        <a href="/companies">Back to Companies</a>
+    </div>

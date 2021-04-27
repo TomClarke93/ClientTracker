@@ -6,11 +6,11 @@ const Company = require('../models/company');
 
 router.get('/', async (req, res) => {
     const companies = await Company.find({});
-    res.send(companies);
+    res.render('companies/index', {companies});
 })
 
 router.get('/new', (req, res) => {
-    res.send('Add new Company');
+    res.render('companies/new')
 })
 
 router.post('/', async (req, res) => {
@@ -22,13 +22,13 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const {id} = req.params;
     const foundCompany = await Company.findById(id);
-    res.send(foundCompany);
+    res.render('companies/show', {company: foundCompany});
 })
 
 router.get('/:id/edit', async (req, res) => {
     const {id} = req.params;
     const foundCompany = await Company.findById(id);
-    res.send(foundCompany);
+    res.render('companies/edit', {company: foundCompany});
 })
 
 router.patch('/:id', async (req, res) => {

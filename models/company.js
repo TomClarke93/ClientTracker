@@ -6,7 +6,7 @@ const companySchema = new Schema ({
     clientCode: String,
     type: {
         type: String,
-        enum: ['Lead', 'Prospect', 'Client', 'Inactive Client']
+        enum: ['lead', 'prospect', 'client', 'inactive']
     },
     summary: String
 });
