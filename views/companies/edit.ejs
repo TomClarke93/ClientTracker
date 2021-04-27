@@ -1,0 +1,30 @@
+<%- layout('layouts/boilerplate') -%>
+    <h1>Edit Company</h1>
+    <a href="/companies">Back to Companies</a>
+    <a href="<%= `/companies/${company._id}`%>">Cancel</a>
+    <form action="/companies/<%=company._id%>?_method=PATCH" method="post">
+        <div>
+            <label for="name">Company Name</label>
+            <input type="text" name="company[name]" id="name" value="<%= company.name %>">
+        </div>
+        <div>
+            <label for="clientCode">Client Code</label>
+            <input type="text" name="company[clientCode]" id="clientCode" value="<%= company.clientCode %>">
+        </div>
+        <div>
+            <label for="type">Type</label>
+            <select name="company[type]" id="type">
+                <option value="lead">Lead</option>
+                <option value="prospect">Prospect</option>
+                <option value="client">Client</option>
+                <option value="inactive">Inactive Client</option>
+            </select>
+        </div>
+        <div>
+            <label for="summary">Company Summary</label>
+            <textarea name="company[summary]" id="summary" cols="50" rows="5"><%= company.summary %></textarea>
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>

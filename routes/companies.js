@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
 router.get('/:id/edit', async (req, res) => {
     const {id} = req.params;
     const foundCompany = await Company.findById(id);
-    res.send(foundCompany);
+    res.render('companies/edit', {company: foundCompany});
 })
 
 router.patch('/:id', async (req, res) => {

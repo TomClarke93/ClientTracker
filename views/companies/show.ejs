@@ -5,6 +5,11 @@
     <div>
         <a href=<%=`/companies/${company._id}/edit` %>>Edit Company</a>
     </div>
+    <div>
+        <form action="/companies/<%=company._id%>?_method=DELETE" method="POST">
+            <button>Delete Company</button>
+        </form>
+    </div>
     <h2>
         <%= company.clientCode%>
     </h2>
