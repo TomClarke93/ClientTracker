@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const {id} = req.params;
     const foundCompany = await Company.findById(id);
-    res.send(foundCompany);
+    res.render('companies/show', {company: foundCompany});
 })
 
 router.get('/:id/edit', async (req, res) => {
